@@ -2,7 +2,7 @@
 <img src="docs/demo.gif" alt="Hamro Sajha Bazaar case study with a listing feed phone mock" width="100%" />
 </div>
 
-<sub>Recorded from the live demo — <a href="docs/demo.mp4">MP4</a> · <a href="docs/screenshot.png">static frame</a></sub>
+<sub>Recorded from the live demo, <a href="docs/demo.mp4">MP4</a> · <a href="docs/screenshot.png">static frame</a></sub>
 
 # Hamro Sajha Bazaar
 
@@ -29,21 +29,21 @@ repository does not ship the store build.
 ## What it does
 
 - **A listing feed** with query, category, price and distance filters, five
-  explicit sort orders and facet counts — all computed locally against a cache.
-- **Buyer and seller screens** — feed, listing detail, checkout, chat, seller
+  explicit sort orders and facet counts, all computed locally against a cache.
+- **Buyer and seller screens**: feed, listing detail, checkout, chat, seller
   dashboard and seller orders, written as Expo Router screens with React Native
   primitives.
-- **An eight-state checkout** — cart, address, review, payment, processing, paid
+- **An eight-state checkout**: cart, address, review, payment, processing, paid
   plus the failed and cancelled branches. Failed payments retry without losing
   the cart.
-- **Three local payment methods** — eSewa, Khalti and cash on delivery. COD
+- **Three local payment methods**: eSewa, Khalti and cash on delivery. COD
   changes the guard: it only settles after delivery is confirmed.
-- **Money in paisa** — integer amounts from cart to settlement, one display
+- **Money in paisa**: integer amounts from cart to settlement, one display
   formatter, a platform fee with a floor, distance-based delivery and an explicit
   seller/platform split.
-- **A stale-while-refresh cache** — fresh, stale and missing reads are distinct
+- **A stale-while-refresh cache**: fresh, stale and missing reads are distinct
   states, so the feed shows cached listings instead of a spinner.
-- **A case-study site** — a phone-frame gallery of the six screens, the checkout
+- **A case-study site**: a phone-frame gallery of the six screens, the checkout
   state diagram, a computed quote breakdown and the seller settlement view.
 
 ## Screenshots
@@ -109,7 +109,7 @@ tests must run with no `npm install` at all.
 edge exists, then that its guard passes: a review needs a non-empty address and a
 positive total, a payment step needs a valid method, and COD only reaches `paid`
 when `deliveryConfirmed` is true. The guard returns a reason string, so a disabled
-button can explain itself. `advance()` merges the patch before running the guard —
+button can explain itself. `advance()` merges the patch before running the guard.
 otherwise confirming delivery and marking the order paid could not happen in one
 action.
 
